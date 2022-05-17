@@ -1,5 +1,5 @@
 import React from 'react'
-import './AddForm.css'
+import './Style.css'
 import { useState } from 'react'
 
 const AddForm = ({ onAdd }) => {

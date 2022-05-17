@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import Button from '../Button/Button'
-import './Header.css'
+import Button from '../Button/Index'
+import './Style.css'
 
 const Header = ({title, onShow, text, color}) => {
   return (

@@ -1,4 +1,4 @@
-import TaskManager from './components/TaskManager/TaskManager';
+import TaskManager from './components/TaskManager/Index';
 import { useState, useEffect } from 'react'
 import './App.css';
 
@@ -27,7 +27,7 @@ function App() {
     return data
   }
 
-  const invertStado = () => {
+  const invertShowAddTask = () => {
     setShowAddTask(!showAddTask)
   }
   
@@ -81,7 +81,7 @@ function App() {
      onAdd={addTask} 
      onShow={showAddTask} 
      setOnShow={setShowAddTask} 
-     b={invertStado} />
+     onShowInverted={invertShowAddTask} />
     </div>
   );
 }
