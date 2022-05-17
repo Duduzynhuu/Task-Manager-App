@@ -1,28 +1,28 @@
 {
   "tasks": [
     {
-      "text": "Groceries shopping",
-      "day": "May 12th at 9:30am",
+      "text": "Take out the trash",
+      "day": "May 11th at 9:30am",
+      "reminder": false,
+      "id": 1
+    },
+    {
+      "text": "Doctor apointment",
+      "day": "May 11th at 3pm",
       "reminder": true,
       "id": 2
     },
     {
-      "text": "Doctors Appointment",
-      "day": "May 12th at 13:45pm",
-      "reminder": true,
+      "text": "Make dinner",
+      "day": "May 11th at 7pm",
+      "reminder": false,
       "id": 3
     },
     {
-      "text": "Code meetup",
-      "day": "May 13th at 6pm",
-      "reminder": false,
-      "id": 4
-    },
-    {
-      "text": "Catch a flight",
-      "day": "May 15th at 8:20am",
+      "text": "Watch movie",
+      "day": "May 11th at 8:30pm",
       "reminder": true,
-      "id": 5
+      "id": 4
     }
   ]
 }

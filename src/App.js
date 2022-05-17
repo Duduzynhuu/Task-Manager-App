@@ -1,6 +1,11 @@
-import TaskManager from "./components/TaskManager/Index";
 import { useState, useEffect } from "react";
-import { BrowserRouter as Router } from "react-router-dom";
+import { Route, Routes, useLocation } from "react-router-dom";
+import Header from "./components/Header/Index";
+import TaskList from "./components/TaskList/Index";
+import Task from "./components/Task/Index";
+import Footer from "./components/Footer/Index";
+import About from "./components/About/Index";
+import AddForm from "./components/AddForm/Index";
 import "./App.css";
 
 function App() {
@@ -42,10 +47,6 @@ function App() {
     });
     const data = await res.json();
     setTasks([...tasks, data]);
-
-    // const id = Math.floor(Math.random() *10000 ) + 1
-    // const newTask = {...task, id}
-    // setTasks([...tasks, newTask])
   };
 
   const deleteTask = async (id) => {
@@ -75,20 +76,44 @@ function App() {
       )
     );
   };
+  const location = useLocation();
   return (
-    <Router>
-      <div className="App">
-        <TaskManager
-          tasks={tasks}
-          onDelete={deleteTask}
-          onToggle={toggleReminder}
-          onAdd={addTask}
-          onShow={showAddTask}
-          setOnShow={setShowAddTask}
-          onShowInverted={invertShowAddTask}
-        />
+    <div className="App">
+      <div className="task-manager">
+        {showAddTask ? (
+          <Header onShow={invertShowAddTask} text="Close" color="red" />
+        ) : (
+          <Header onShow={invertShowAddTask} text="Add" color="green" />
+        )}
+        <Routes>
+          <Route
+            path="/"
+            element={
+              <>
+                {showAddTask && <AddForm onAdd={addTask} />}
+                {tasks.length > 0 ? (
+                  <TaskList
+                    tasks={tasks}
+                    onDelete={deleteTask}
+                    onToggle={toggleReminder}
+                  >
+                    <Task
+                      task={tasks}
+                      onDelete={deleteTask}
+                      onToggle={toggleReminder}
+                    />
+                  </TaskList>
+                ) : (
+                  "No Tasks to SHOW"
+                )}
+              </>
+            }
+          />
+          <Route path="/about" element={<About />} />
+        </Routes>
+        {location.pathname === "/" && <Footer />}
       </div>
-    </Router>
+    </div>
   );
 }
 

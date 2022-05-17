@@ -3,9 +3,9 @@ footer {
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  margin-top: 1.2rem;
+  margin: 1.2rem auto 0;
 }
 
 .copyRight {
-  margin: 0 auto 0.8rem;
+  margin: 0.5rem auto 0.5rem;
 }
