@@ -10,7 +10,7 @@ This is a test project for me to practice Managing States, make API calls from a
 
 To install the server you need to use the command: npm install -g json-server
 
-### npm server run
+### npm run server
 
 This command will run the local server
 
