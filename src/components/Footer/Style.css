@@ -1,0 +1,11 @@
+footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  margin-top: 1.2rem;
+}
+
+.copyRight {
+  margin: 0 auto 0.8rem;
+}
