@@ -1,0 +1,42 @@
+.task {
+    display: flex-start;
+    flex-direction: column;
+    background-color: #EEE;
+    margin: 0.2rem 1rem;
+    padding: 1.1rem;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+p {
+    font-size: 0.75rem;
+    text-align: left;
+    font-weight: 600;
+}
+
+h3 {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.reminder {
+    border-left: 10px solid lightgreen;
+}
+
+@media (max-width: 330px) {
+    .task {
+        padding: 0.7rem 1.1rem;
+    }
+
+    p {
+        font-size: 0.7rem;
+        font-weight: 530;
+    }
+    h3 {
+        font-size: 1.1rem;
+    }
+}
