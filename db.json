@@ -23,6 +23,14 @@
       "day": "May 11th at 8:30pm",
       "reminder": true,
       "id": 4
+    },
+    {
+      "text": "Let's go to the mall",
+      "day": "1995-07-01",
+      "time": "18:00",
+      "description": "Robyn Sparkles",
+      "reminder": true,
+      "id": 5
     }
   ]
 }

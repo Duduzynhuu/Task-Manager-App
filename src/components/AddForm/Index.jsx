@@ -5,6 +5,8 @@ import { useState } from "react";
 const AddForm = ({ onAdd }) => {
   const [text, setText] = useState("");
   const [day, setDay] = useState("");
+  const [time, setTime] = useState("");
+  const [description, setDescription] = useState("");
   const [reminder, setReminder] = useState(false);
 
   const handleSubmit = (event) => {
@@ -14,9 +16,11 @@ const AddForm = ({ onAdd }) => {
       return;
     }
 
-    onAdd({ text, day, reminder });
+    onAdd({ text, day, time, description, reminder });
     setText("");
     setDay("");
+    setTime("");
+    setDescription("");
     setReminder(false);
   };
   return (
@@ -25,18 +29,37 @@ const AddForm = ({ onAdd }) => {
         <label>Task</label>
         <input
           type="text"
-          placeholder="Insert your Task here"
+          placeholder="What is your task?"
           value={text}
           onChange={(e) => setText(e.target.value)}
+          required
         />
       </div>
+      <div className="form__DayTime">
+        <div className="form__control form__DayTime--day">
+          <label>Day</label>
+          <input
+            type="date"
+            value={day}
+            onChange={(e) => setDay(e.target.value)}
+          />
+        </div>
+        <div className="form__control form__DayTime--time">
+          <label>Time </label>
+          <input
+            type="time"
+            value={time}
+            onChange={(e) => setTime(e.target.value)}
+          />
+        </div>
+      </div>
       <div className="form__control">
-        <label>Day and Time</label>
+        <label>Description </label>
         <input
           type="text"
-          placeholder="Insert Day and Time here"
-          value={day}
-          onChange={(e) => setDay(e.target.value)}
+          placeholder="Describe your task here"
+          value={description}
+          onChange={(e) => setDescription(e.target.value)}
         />
       </div>
       <div className="form__control--reminder">

@@ -34,8 +34,10 @@ const TaskDetails = () => {
     <h3>Loading...</h3>
   ) : (
     <div className="task-details">
-      <h3>{task.text}</h3>
-      <p>{task.day}</p>
+      <h3>Title: {task.text}</h3>
+      <p>Day: {task.day}</p>
+      <p>Time: {task.time}</p>
+      <p>Description: {task.description}</p>
       <Button text="Go Back" color="black" onClick={handleBack} />
     </div>
   );
