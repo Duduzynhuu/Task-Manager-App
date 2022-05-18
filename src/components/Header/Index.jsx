@@ -10,7 +10,7 @@ const Header = ({ title, onShow, text, color }) => {
     <div className="task-header">
       <h2>{title}</h2>
       {location.pathname === "/" && (
-        <Button onClick={onShow} text={text} color={color} />
+        <Button className="btn" onClick={onShow} text={text} color={color} />
       )}
     </div>
   );

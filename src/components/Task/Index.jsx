@@ -1,7 +1,9 @@
 import React from "react";
 import { FaTimes } from "react-icons/fa";
 import { Link } from "react-router-dom";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import "./Style.css";
+import { faPenToSquare } from "@fortawesome/free-solid-svg-icons";
 
 const Task = ({ task, onDelete, onToggle }) => {
   return (
@@ -9,14 +11,22 @@ const Task = ({ task, onDelete, onToggle }) => {
       className={`task ${task.reminder ? "reminder" : ""}`}
       onDoubleClick={() => onToggle(task.id)}
     >
-      <h3>
-        {task.text}
-        <FaTimes style={{ color: "red" }} onClick={() => onDelete(task.id)} />
-      </h3>
+      <div className="task-top">
+        <div className="task-title">
+          <h3>{task.text}</h3>
+        </div>
+        <div className="task-icons">
+          <Link to={`/task/${task.id}`}>
+            <FontAwesomeIcon icon={faPenToSquare} style={{ color: "black" }} />
+          </Link>
+          <FaTimes
+            style={{ color: "red", cursor: "pointer" }}
+            onClick={() => onDelete(task.id)}
+          />
+        </div>
+      </div>
       <p>{task.day}</p>
-      <p>
-        <Link to={`/task/${task.id}`}>View Details</Link>
-      </p>
+      <p></p>
     </div>
   );
 };

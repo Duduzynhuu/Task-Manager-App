@@ -1,13 +1,24 @@
 .task {
-  display: flex-start;
+  display: flex;
   flex-direction: column;
   background-color: #eee;
   margin: 0.2rem 1rem;
   padding: 1.1rem;
   border-radius: 8px;
-  font-size: 1rem;
   font-weight: 500;
-  cursor: pointer;
+}
+
+.task-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.task-icons {
+  display: flex;
+  align-items: center;
+  font-size: 1.4rem;
+  min-width: 3.5rem;
+  justify-content: space-between;
 }
 
 .task > p {
@@ -16,18 +27,11 @@
   font-weight: 600;
 }
 
-.task > h3 {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  width: 100%;
-}
-
 .reminder {
   border-left: 10px solid lightgreen;
 }
 
-@media (max-width: 330px) {
+@media (max-width: 400px) {
   .task {
     padding: 0.7rem 1.1rem;
   }
@@ -36,7 +40,11 @@
     font-size: 0.7rem;
     font-weight: 530;
   }
-  .task > h3 {
-    font-size: 1.1rem;
+  .task-title > h3 {
+    font-size: 0.9rem;
+  }
+  .task-icons {
+    font-size: 1rem;
+    min-width: 2.3rem;
   }
 }

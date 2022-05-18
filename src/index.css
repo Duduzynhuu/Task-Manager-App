@@ -11,9 +11,3 @@ body {
   font-family: Arial, Helvetica, sans-serif;
   background-color: #eee;
 }
-
-@media (max-width: 330px) {
-  body {
-    font-size: 13px;
-  }
-}

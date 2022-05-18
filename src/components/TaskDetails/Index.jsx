@@ -1,6 +1,6 @@
 import React from "react";
 import { useState, useEffect } from "react";
-import { useParams, useNavigate, useLocation } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 import Button from "../Button/Index";
 import "./Style.css";
 
@@ -10,7 +10,6 @@ const TaskDetails = () => {
 
   const params = useParams();
   const navigate = useNavigate();
-  const location = useLocation();
 
   useEffect(() => {
     const fetchTask = async () => {
@@ -35,7 +34,6 @@ const TaskDetails = () => {
     <h3>Loading...</h3>
   ) : (
     <div className="task-details">
-      <p>{location.pathname}</p>
       <h3>{task.text}</h3>
       <p>{task.day}</p>
       <Button text="Go Back" color="black" onClick={handleBack} />

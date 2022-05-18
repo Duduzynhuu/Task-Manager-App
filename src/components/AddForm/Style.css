@@ -59,6 +59,13 @@ input[type="checkbox"] {
     width: 80%;
   }
 
+  .form__submit {
+    font-size: 0.7rem;
+  }
+  label {
+    font-size: 0.7rem;
+  }
+
   input[type="checkbox"] {
     width: 15px;
     height: 15px;
@@ -72,7 +79,12 @@ input[type="checkbox"] {
   }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 660px) {
+  .form__control--reminder {
+    width: 100%;
+  }
+}
+@media (max-width: 375px) {
   .form__control--reminder {
     width: 100%;
   }
