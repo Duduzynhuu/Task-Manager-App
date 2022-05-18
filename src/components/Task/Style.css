@@ -10,13 +10,13 @@
   cursor: pointer;
 }
 
-p {
+.task > p {
   font-size: 0.75rem;
   text-align: left;
   font-weight: 600;
 }
 
-h3 {
+.task > h3 {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -32,11 +32,11 @@ h3 {
     padding: 0.7rem 1.1rem;
   }
 
-  p {
+  .task > p {
     font-size: 0.7rem;
     font-weight: 530;
   }
-  h3 {
+  .task > h3 {
     font-size: 1.1rem;
   }
 }

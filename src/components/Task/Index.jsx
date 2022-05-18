@@ -1,5 +1,6 @@
 import React from "react";
 import { FaTimes } from "react-icons/fa";
+import { Link } from "react-router-dom";
 import "./Style.css";
 
 const Task = ({ task, onDelete, onToggle }) => {
@@ -9,13 +10,13 @@ const Task = ({ task, onDelete, onToggle }) => {
       onDoubleClick={() => onToggle(task.id)}
     >
       <h3>
-        {task.text}{" "}
-        <FaTimes
-          style={{ color: "red", cursor: "pointer" }}
-          onClick={() => onDelete(task.id)}
-        />
+        {task.text}
+        <FaTimes style={{ color: "red" }} onClick={() => onDelete(task.id)} />
       </h3>
       <p>{task.day}</p>
+      <p>
+        <Link to={`/task/${task.id}`}>View Details</Link>
+      </p>
     </div>
   );
 };

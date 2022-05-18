@@ -2,17 +2,15 @@ import React from "react";
 import PropTypes from "prop-types";
 import "./Style.css";
 
-const Button = ({ text, onShow, color }) => {
+const Button = ({ text, color, onClick }) => {
   return (
-    <>
-      <button
-        className="btn-add"
-        onClick={onShow}
-        style={{ backgroundColor: color }}
-      >
-        {text}
-      </button>
-    </>
+    <button
+      className="btn"
+      style={{ backgroundColor: color }}
+      onClick={onClick}
+    >
+      {text}
+    </button>
   );
 };
 

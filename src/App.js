@@ -6,6 +6,7 @@ import Task from "./components/Task/Index";
 import Footer from "./components/Footer/Index";
 import About from "./components/About/Index";
 import AddForm from "./components/AddForm/Index";
+import TaskDetails from "./components/TaskDetails/Index";
 import "./App.css";
 
 function App() {
@@ -110,6 +111,7 @@ function App() {
             }
           />
           <Route path="/about" element={<About />} />
+          <Route path="/task/:id" element={<TaskDetails />} />
         </Routes>
         {location.pathname === "/" && <Footer />}
       </div>
