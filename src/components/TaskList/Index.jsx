@@ -1,7 +1,6 @@
-import React from "react";
 import Task from "../Task/Index";
 
-const TaskList = ({ tasks, onDelete, onToggle }) => {
+const TaskList = ({ tasks, onDelete, onToggle, onShow }) => {
   return (
     <>
       {tasks.map((task) => (
@@ -10,6 +9,7 @@ const TaskList = ({ tasks, onDelete, onToggle }) => {
           task={task}
           onDelete={onDelete}
           onToggle={onToggle}
+          onShow={onShow}
         />
       ))}
     </>

@@ -2,16 +2,16 @@ import React from "react";
 import { FaTimes } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import "./Style.css";
 import { faPenToSquare } from "@fortawesome/free-solid-svg-icons";
+import "./Style.css";
 
-const Task = ({ task, onDelete, onToggle }) => {
+const Task = ({ task, onDelete, onToggle, onShow }) => {
   return (
     <div
       className={`task ${task.reminder ? "reminder" : ""}`}
       onDoubleClick={() => onToggle(task.id)}
     >
-      <div className="task-top">
+      <div className="task-top" onClick={() => onShow(task.id)}>
         <div className="task-title">
           <h3>{task.text}</h3>
         </div>
@@ -28,6 +28,7 @@ const Task = ({ task, onDelete, onToggle }) => {
       <p>
         {task.day} at {task.time}
       </p>
+      {task.showDescription && <p>{task.description}</p>}
     </div>
   );
 };

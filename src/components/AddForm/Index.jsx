@@ -8,6 +8,7 @@ const AddForm = ({ onAdd }) => {
   const [time, setTime] = useState("");
   const [description, setDescription] = useState("");
   const [reminder, setReminder] = useState(false);
+  const [showDescription, setShowDescription] = useState(false);
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -16,13 +17,15 @@ const AddForm = ({ onAdd }) => {
       return;
     }
 
-    onAdd({ text, day, time, description, reminder });
+    onAdd({ text, day, time, description, reminder, showDescription });
     setText("");
     setDay("");
     setTime("");
     setDescription("");
     setReminder(false);
+    setShowDescription(false);
   };
+
   return (
     <form className="form" onSubmit={handleSubmit}>
       <div className="form__control">

@@ -77,6 +77,32 @@ function App() {
       )
     );
   };
+
+  const toggleDescription = async (id) => {
+    const taskToToggle = await fetchTask(id);
+    const updatedTask = {
+      ...taskToToggle,
+      showDescription: !taskToToggle.showDescription,
+    };
+
+    const res = await fetch(`http://localhost:5000/tasks/${id}`, {
+      method: "PUT",
+      headers: {
+        "Content-type": "application/json",
+      },
+      body: JSON.stringify(updatedTask),
+    });
+    const data = await res.json();
+
+    setTasks(
+      tasks.map((task) =>
+        task.id === id
+          ? { ...task, showDescription: data.showDescription }
+          : task
+      )
+    );
+  };
+
   const location = useLocation();
   return (
     <div className="App">
@@ -97,11 +123,13 @@ function App() {
                     tasks={tasks}
                     onDelete={deleteTask}
                     onToggle={toggleReminder}
+                    onShow={toggleDescription}
                   >
                     <Task
                       task={tasks}
                       onDelete={deleteTask}
                       onToggle={toggleReminder}
+                      onShow={toggleDescription}
                     />
                   </TaskList>
                 ) : (

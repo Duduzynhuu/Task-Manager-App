@@ -4,33 +4,47 @@
       "text": "Take out the trash",
       "day": "May 11th at 9:30am",
       "reminder": false,
-      "id": 1
+      "id": 1,
+      "showDescription": true
     },
     {
       "text": "Doctor apointment",
       "day": "May 11th at 3pm",
       "reminder": true,
-      "id": 2
+      "id": 2,
+      "showDescription": true
     },
     {
       "text": "Make dinner",
       "day": "May 11th at 7pm",
       "reminder": false,
-      "id": 3
+      "id": 3,
+      "showDescription": false
     },
     {
       "text": "Watch movie",
       "day": "May 11th at 8:30pm",
       "reminder": true,
-      "id": 4
+      "id": 4,
+      "showDescription": false
     },
     {
-      "text": "Let's go to the mall",
-      "day": "1995-07-01",
-      "time": "18:00",
-      "description": "Robyn Sparkles",
+      "text": "test",
+      "day": "11811-11-11",
+      "time": "15:01",
+      "description": "dsadasdsa",
       "reminder": true,
+      "showDescription": false,
       "id": 5
+    },
+    {
+      "text": "dsadsadsa",
+      "day": "",
+      "time": "",
+      "description": "dsadasdsa",
+      "reminder": true,
+      "showDescription": false,
+      "id": 6
     }
   ]
 }
